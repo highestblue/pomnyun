@@ -290,13 +290,18 @@
       padding-bottom: 50px;
 
       a {
-        width: 170px;
+        padding: 0 15px;
         height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $color4;
+        border: 3px solid $color4;
+        background-color: $base-white;
         border-radius: 4px;
+        font-weight: bold;
+        font-size: $fsize5;
+        text-transform: uppercase;
+        text-align: center;
         &:hover, &:focus {
           background-color: $base-black;
         }
