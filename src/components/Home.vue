@@ -8,7 +8,7 @@
         <swiper :options="swiperOption1">
           <swiper-slide v-for="slide in slides" :key="slide['.key']">
             <div class="slide" :style="{ 'background-image': 'url(' + slide.imageURL + ')'}">
-              <a :href="slide.targetURL" v-if="slide.targetURL !== ''">{{ slide.buttonText }}</a>
+              <a :href="slide.targetURL" :target="slide.targetWindow" v-if="slide.targetURL !== ''">{{ slide.buttonText }}</a>
             </div>
           </swiper-slide>
           <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
