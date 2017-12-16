@@ -2,11 +2,16 @@
   <div id="header-wrapper">
     <transition name="g-animate" animate enter-active-class="pt-page-moveFromLeftFade" leave-active-class="pt-page-moveToLeftFade">
       <div id="side-nav" class="hidden-md hidden-lg" v-if="sideNavVisible">
-        <ul>
+        <ul class="nav-links">
           <li @click="navigate('/about')">{{ $t('common.about') }}</li>
           <li @click="navigate('/dharma')">dharma q&a</li>
           <li @click="navigate('/events')">{{ $t('common.events') }}</li>
           <li @click="navigate('/blog')">{{ $t('common.blog') }}</li>
+        </ul>
+        <hr>
+        <ul class="social-media-links">
+          <li><a href="https://www.facebook.com/pomnyundailyquote" target="_blank"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCzfKXReow3r5n1JR5nVlJZw" target="_blank"><i class="fa fa-youtube"></i></a></li>
         </ul>
       </div>
     </transition>
@@ -14,18 +19,25 @@
     <section id="service-nav">
       <div class="container">
         <div class="row">
-          <div class="col-xs-6">
+          <div class="col-xs-4">
             <button class="visible-xs visible-sm" @click="sideNavVisible = !sideNavVisible"><i class="fa fa-bars"></i></button>
             <app-logo class="hidden-xs hidden-sm"></app-logo>
           </div>
-          <div class="col-xs-6">
+          <div class="col-xs-8">
             <app-logo class="visible-xs visible-sm pull-right"></app-logo>
-            <ul class="hidden-xs hidden-sm">
-              <router-link to="/about" activeClass="active" tag="li"><a>{{ $t('common.about') }}</a></router-link>
-              <router-link to="/dharma" activeClass="active" tag="li"><a>dharma q&a</a></router-link>
-              <router-link to="/events" activeClass="active" tag="li"><a>{{ $t('common.events') }}</a></router-link>
-              <router-link to="/blog" activeClass="active" tag="li"><a>{{ $t('common.blog') }}</a></router-link>
-            </ul>
+            <div id="right-nav" class="hidden-xs hidden-sm">
+              <ul class="social-media-links">
+                <li><a href="https://www.facebook.com/pomnyundailyquote" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCzfKXReow3r5n1JR5nVlJZw" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                <li>|</li>
+              </ul>
+              <ul class="nav-links">
+                <router-link to="/about" activeClass="active" tag="li"><a>{{ $t('common.about') }}</a></router-link>
+                <router-link to="/dharma" activeClass="active" tag="li"><a>dharma q&a</a></router-link>
+                <router-link to="/events" activeClass="active" tag="li"><a>{{ $t('common.events') }}</a></router-link>
+                <router-link to="/blog" activeClass="active" tag="li"><a>{{ $t('common.blog') }}</a></router-link>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -81,25 +93,62 @@
     left: 0;
     width: 260px;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
     z-index: 9999;
 
+    hr {
+      width: 80%;
+      border: 1px solid $base-white;
+    }
+
     ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
       li {
-         &:not(:last-child) {
-           margin-bottom: 10px;
-        }
         font-family: $accent-font;
         font-size: $fsize5;
         color: $base-white;
         text-transform: uppercase;
         cursor: pointer;
-        &:hover, &:focus {
+
+        &:hover, &:focus, &:active {
           color: $color4;
+        }
+      }
+
+      &.social-media-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 30%;
+
+        li {
+          a {
+            font-weight: bold;
+            font-size: $fsize6;
+          }
+
+          &:first-child {
+            a {
+              color: $facebook-color;
+
+              &:hover, &:focus, &:active {
+                color: darken($facebook-color, 30%);
+              }
+            }
+          }
+
+          &:nth-child(2) {
+            a {
+              color: $youtube-color;
+
+              &:hover, &:focus, &:active {
+                color: darken($youtube-color, 30%);
+              }
+            }
+          }
         }
       }
     }
@@ -128,28 +177,59 @@
       }
     }
 
-    ul {
+    #right-nav {
       @extend .flex-default;
       justify-content: flex-end;
-      position: relative;
 
-      li {
-        margin-right: 15px;
+      ul {
+        @extend .flex-default;
 
-        a {
-          color: $base-white;
-          font-size: 0.8rem;
-          text-transform: uppercase;
-          letter-spacing: 1px;
+        li {
+          margin-right: 15px;
 
-          &:hover, &:focus, &:active {
-            color: $base-black;
+          a {
+            color: $base-white;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            &:hover, &:focus, &:active {
+              color: $base-black;
+            }
+          }
+
+          &.active {
+            a {
+              color: $base-black;
+            }
           }
         }
 
-        &.active {
-          a {
-            color: $base-black;
+        &.social-media-links {
+          li {
+            a {
+              font-weight: bold;
+            }
+
+            &:first-child {
+              a {
+                color: $facebook-color;
+
+                &:hover, &:focus, &:active {
+                  color: darken($facebook-color, 30%);
+                }
+              }
+            }
+
+            &:nth-child(2) {
+              a {
+                color: $youtube-color;
+
+                &:hover, &:focus, &:active {
+                  color: darken($youtube-color, 30%);
+                }
+              }
+            }
           }
         }
       }
