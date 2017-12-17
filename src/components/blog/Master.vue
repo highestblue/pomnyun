@@ -72,6 +72,13 @@
         filteredRecords: []
       }
     },
+    head: {
+      title () {
+        return {
+          inner: 'Blog'
+        }
+      }
+    },
     filters: {
       date (timestamp) {
         return moment.unix(timestamp).format('MMMM Do, YYYY')
@@ -149,22 +156,24 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../assets/styles/scss/variables.scss';
   @import '../../assets/styles/scss/global.scss';
 
   input {
     height: inherit;
     border: 2px solid $color4;
+
     &::-webkit-input-placeholder {
       color: $color3;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+
     &::-moz-placeholder {
       color: $color3;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+
     &:-ma-input-placeholder {
       color: $color3;
       text-transform: uppercase;
@@ -187,6 +196,7 @@
     #mobile-search-options {
       #mobile-category {
         margin-top: 20px;
+
         .input-group {
           width: 100%;
 
@@ -197,18 +207,23 @@
             text-transform: uppercase;
             letter-spacing: 1px;
           }
+
           .accordion-menu {
             border: 1px solid $color4;
             text-align: center;
+
             li {
               color: $color3;
               font-size: 1rem;
               text-transform: capitalize;
               cursor: pointer;
+
               &:not(:last-child) {
                 margin-bottom: 5px;
               }
-              &:hover, &:focus {
+
+              &:hover,
+              &:focus {
                 color: $color1;
               }
             }
@@ -219,6 +234,7 @@
 
     #search-bar {
       margin-bottom: 20px;
+
       .input-group {
         width: 100%;
         height: 30px;
@@ -246,6 +262,7 @@
         color: $color2;
         font-size: $fsize6;
       }
+
       .custom-control-input {
         &:checked ~ {
           .custom-control-indicator {
@@ -267,11 +284,11 @@
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      cursor: pointer;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 15px;
       position: relative;
+      cursor: pointer;
 
       &.hvr-overline-reveal:before {
         background: $color4;
@@ -300,6 +317,7 @@
           letter-spacing: 1px;
           line-height: 1;
         }
+
         .date {
           font-size: $fsize7;
         }

@@ -107,13 +107,16 @@
 
     ul {
       li {
+        padding: 5px 0;
         font-family: $accent-font;
         font-size: $fsize5;
         color: $base-white;
         text-transform: uppercase;
         cursor: pointer;
 
-        &:hover, &:focus, &:active {
+        &:hover,
+        &:focus,
+        &:active {
           color: $color4;
         }
       }
@@ -134,7 +137,9 @@
             a {
               color: $facebook-color;
 
-              &:hover, &:focus, &:active {
+              &:hover,
+              &:focus,
+              &:active {
                 color: darken($facebook-color, 30%);
               }
             }
@@ -144,7 +149,9 @@
             a {
               color: $youtube-color;
 
-              &:hover, &:focus, &:active {
+              &:hover,
+              &:focus,
+              &:active {
                 color: darken($youtube-color, 30%);
               }
             }
@@ -171,7 +178,9 @@
       i {
         font-size: $fsize4;
         color: $base-white;
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           color: $color2;
         }
       }
@@ -193,7 +202,9 @@
             text-transform: uppercase;
             letter-spacing: 1px;
 
-            &:hover, &:focus, &:active {
+            &:hover,
+            &:focus,
+            &:active {
               color: $base-black;
             }
           }
@@ -215,7 +226,9 @@
               a {
                 color: $facebook-color;
 
-                &:hover, &:focus, &:active {
+                &:hover,
+                &:focus,
+                &:active {
                   color: darken($facebook-color, 30%);
                 }
               }
@@ -225,7 +238,9 @@
               a {
                 color: $youtube-color;
 
-                &:hover, &:focus, &:active {
+                &:hover,
+                &:focus,
+                &:active {
                   color: darken($youtube-color, 30%);
                 }
               }

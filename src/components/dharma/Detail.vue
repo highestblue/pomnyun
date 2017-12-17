@@ -29,6 +29,14 @@
         record: {}
       }
     },
+    head: {
+      title () {
+        return {
+          inner: 'Dharma Q&A',
+          complement: this.record.title[this.lang]
+        }
+      }
+    },
     firebase: {
       dharmaArr: db.ref('dharma')
     },
@@ -78,28 +86,37 @@
     h6 {
       margin: 8px 0 10px;
     }
+
     ul {
       li {
         color: $color2;
         cursor: pointer;
+
         &:not(:last-child) {
           margin-bottom: 7px;
         }
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           color: $color4;
         }
       }
     }
+
     a {
       display: block;
       margin-top: 10px;
       color: $color3;
+
       i {
         color: $color4;
       }
+
       span {
         margin-left: 5px;
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           color: $color4;
         }
       }
@@ -118,6 +135,7 @@
       font-weight: bold;
       color: $color1;
       text-transform: capitalize;
+
       span {
         display: inline-block;
         vertical-align: middle;
@@ -139,6 +157,7 @@
         color: $color3;
         font-size: 0.9rem;
       }
+
       span {
         border: 1px solid $color1;
         border-radius: 5px;

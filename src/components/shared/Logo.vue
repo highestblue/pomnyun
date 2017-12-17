@@ -72,7 +72,8 @@
 
 
 <style lang="scss" scoped>
-  @import '../../assets/styles/scss/variables.scss';
+  @import '../../assets/styles/scss/global.scss';
+
   #logo-wrapper {
     height: 18px;
   }
@@ -80,7 +81,9 @@
   svg {
     fill: $base-white;
     transition: all 0.3s;
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
       fill: $base-black;
     }
   }

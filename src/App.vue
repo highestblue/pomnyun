@@ -48,83 +48,23 @@
 </script>
 
 <style lang="scss">
-  @import './assets/styles/scss/variables.scss';
-  @import './assets/styles/scss/animations.scss';
-
-  html {font-size: 16px;}
-
-  body {
-    background-color: $color2;
-    color: $color1;
-    font-family: 'Source Sans Pro', sans-serif;
-    line-height: 1.45;
-    min-width: 320px;
-    max-width: 1920px;
-  }
-
-  main {
-    // background-image: url('./assets/images/bg.png');
-    // background-repeat: repeat;
-    background-color: #fff;
-    padding-bottom: 100px;
-    overflow: hidden;
-  }
-
-  p {margin-bottom: 1.3rem;}
-
-  h1, h2, h3, h4, h5, h6 {
-    margin: 1.414rem 0 0.5rem;
-    font-family: $accent-font;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.2;
-  }
-
-  h1 {
-    margin-top: 0;
-    font-size: $fsize1;
-  }
-
-  h2 {font-size: $fsize2;}
-
-  h3 {font-size: $fsize3;}
-
-  h4 {font-size: $fsize4;}
-
-  h5 {font-size: $fsize5;}
-
-  h6 {font-size: $fsize6;}
-
-  small {font-size: $fsize7;}
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  a {
-    color: $color2;
-
-    &:hover, &:focus {
-      color: $color4;
-      text-decoration: none;
-    }
-  }
-
-  hr {
-    border-color: $color3;
-    border-style: dashed;
-  }
+  @import './assets/styles/scss/global.scss';
 
   .container-fluid {
     padding: 0;
   }
 
-  #about-wrapper, #dharma-master-wrapper, #dharma-detail-wrapper, #events-wrapper, #blog-master-wrapper, #blog-detail-wrapper {
+  #about-wrapper,
+  #dharma-master-wrapper,
+  #dharma-detail-wrapper,
+  #events-wrapper,
+  #blog-master-wrapper,
+  #blog-detail-wrapper {
     padding-top: 40px;
-    section { padding-bottom: 30px; }
+
+    section {
+      padding-bottom: 30px;
+    }
   }
 
   .swiper-pagination-bullets {
@@ -137,13 +77,20 @@
 
   .about-link {
     color: $color4;
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
       color: $color3;
     }
   }
 
   .detail-content {
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       text-transform: initial;
       letter-spacing: 0;
     }
@@ -152,11 +99,6 @@
       font-family: $base-font;
       font-size: 1rem;
       color: $color2;
-    }
-
-    h3 {
-      font-size: $fsize6;
-      color: $base-gray;
     }
 
     h3 {
@@ -193,12 +135,13 @@
       position: relative;
 
       &:before {
-        content: "\201c";
         position: absolute;
         left: 15px;
         top: 0;
         font-size: 3rem;
+        content: "\201c";
       }
+
       p {
         padding-left: 20px;
       }
@@ -220,9 +163,11 @@
     width: 100%;
     height: 275px;
     object-fit: cover;
-    cursor: pointer;
     transition: all 0.2s;
-    &:hover, &:focus {
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
       filter: brightness(75%);
     }
   }

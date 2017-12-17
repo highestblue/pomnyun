@@ -113,16 +113,27 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-  @import '../assets/styles/scss/variables.scss';
-  @import '../assets//styles/scss/global.scss';
-
-  .row {
-    margin-bottom: 20px;
+<script>
+  export default {
+    head: {
+      title () {
+        return {
+          inner: 'About'
+        }
+      }
+    }
   }
+</script>
+
+<style lang="scss" scoped>
+  @import '../assets//styles/scss/global.scss';
 
   p {
     color: $color2;
+  }
+
+  .row {
+    margin-bottom: 20px;
   }
 
   #roles {
@@ -164,6 +175,7 @@
     padding: 21px 0px 10px;
     margin-top: 4px;
     margin-bottom: 30px;
+
     .line {
       position: absolute;
       width: 4px;
@@ -173,11 +185,13 @@
       bottom: 0px;
       margin-left: 30px;
 
-      &:before, &:after {
-        content: '';
+      &:before,
+      &:after {
         position: absolute;
         display: block;
+        content: '';
       }
+
       &:before {
         top: -4px;
         left: -4px;
@@ -186,6 +200,7 @@
         border-radius: 50%;
         background: $color3;
       }
+
       &:after {
         bottom: -14px;
         left: -10px;
@@ -212,7 +227,6 @@
         display: block;
         top: 8px;
         left: -24px;
-        content: '';
         width: 0px;
         height: 0px;
         border: inherit;
@@ -221,6 +235,7 @@
         border-bottom-color: transparent;
         border-left-color: transparent;
         border-right-color: $color5;
+        content: '';
       }
 
       .year {

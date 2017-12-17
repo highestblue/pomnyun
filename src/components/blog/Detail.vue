@@ -30,6 +30,14 @@
         record: {}
       }
     },
+    head: {
+      title () {
+        return {
+          inner: 'Blog',
+          complement: this.record.title[this.lang]
+        }
+      }
+    },
     filters: {
       date (timestamp) {
         return moment.unix(timestamp).format('MMMM Do, YYYY')
@@ -84,14 +92,18 @@
     h6 {
       margin: 8px 0 10px;
     }
+
     ul {
       li {
         font-size: 0.9rem;
         cursor: pointer;
+
         &:not(:last-child) {
           margin-bottom: 7px;
         }
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           color: $color4;
         }
       }
@@ -100,12 +112,16 @@
       display: block;
       margin-top: 10px;
       color: $color3;
+
       i {
         color: $color4;
       }
+
       span {
         margin-left: 5px;
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           color: $color4;
         }
       }
@@ -123,6 +139,7 @@
       font-weight: bold;
       color: $color1;
       text-transform: capitalize;
+
       span {
         display: inline-block;
         vertical-align: middle;
@@ -144,6 +161,7 @@
         color: $color3;
         font-size: 0.9rem;
       }
+
       span {
         border: 1px solid $color1;
         border-radius: 5px;
@@ -156,5 +174,4 @@
       }
     }
   }
-
 </style>

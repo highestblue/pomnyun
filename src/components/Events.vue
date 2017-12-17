@@ -58,6 +58,13 @@
         pastEventsTotal: 0
       }
     },
+    head: {
+      title () {
+        return {
+          inner: 'Events'
+        }
+      }
+    },
     computed: {
       upcomingEvents () {
         let data = _.filter(this.eventArr, (obj) => {
@@ -128,15 +135,16 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/styles/scss/variables.scss';
   @import '../assets/styles/scss/global.scss';
 
-  #upcoming-events, #past-events {
+  #upcoming-events,
+  #past-events {
     .row {
       padding: 10px 0;
       padding-bottom: 20px;
 
-      .thumbnail, .content {
+      .thumbnail,
+      .content {
         height: 250px;
       }
 
@@ -148,12 +156,14 @@
 
       .content {
         color: $color2;
+
         .title {
           font-weight: bold;
           text-transform: capitalize;
         }
 
-        .date, .venue {
+        .date,
+        .venue {
           color: $color3;
         }
 
@@ -162,6 +172,7 @@
             text-transform: uppercase;
           }
         }
+
         .venue {
           a {
             margin-left: 5px;
@@ -169,11 +180,13 @@
             text-decoration: none;
             text-transform: uppercase;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
               color: $color3;
             }
           }
         }
+
         .description {
           max-height: 195px;
           margin: 10px 0;
@@ -185,7 +198,8 @@
   }
 
   @media screen and (min-width: 992px) {
-    #upcoming-events, #past-events {
+    #upcoming-events,
+    #past-events {
       .row {
         padding-bottom: 10px;
       }

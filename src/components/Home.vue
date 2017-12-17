@@ -272,7 +272,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/styles/scss/variables.scss';
   @import '../assets/styles/scss/global.scss';
 
   .fa-arrow-right {
@@ -286,6 +285,7 @@
       justify-content: center;
       align-items: center;
     }
+
     .slide {
       background-repeat: no-repeat;
       background-size: cover;
@@ -310,17 +310,22 @@
         font-size: $fsize5;
         text-transform: uppercase;
         text-align: center;
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           background-color: $base-black;
         }
       }
     }
   }
 
-  #dharma-qa, #blog {
+  #dharma-qa,
+  #blog {
     h6 {
       cursor: pointer;
-      &:hover, &:focus {
+
+      &:hover,
+      &:focus {
         color: $color4;
       }
     }
@@ -331,6 +336,7 @@
       li {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         color: $color2;
 
         &:not(:last-child) {
@@ -339,12 +345,12 @@
 
         a {
           @extend .text-ellipsis;
-          width: 88%;
+          width: 85%;
           cursor: pointer;
         }
 
         span {
-          width: 12%;
+          width: 40px;
           height: 20px;
           background-color: $color4;
           border-radius: 5px;
@@ -377,7 +383,8 @@
         padding: 10px 15px;
       }
 
-      .title, .date {
+      .title,
+      .date {
         color: $base-white;
       }
 
@@ -389,6 +396,7 @@
         letter-spacing: 1px;
         line-height: 1;
       }
+
       .date {
         font-size: $fsize7;
       }
@@ -400,10 +408,13 @@
     margin: 0 auto;
   }
 
-  #articles, #books, #talks {
+  #articles,
+  #books,
+  #talks {
     .swiper-slide {
       height: 275px;
     }
+
     .slide {
       @extend .flex-default;
       height: 100%;
@@ -427,6 +438,7 @@
         color: $base-white;
         letter-spacing: 1px;
       }
+
       .publisher {
         font-size: $fsize7;
         color: #ddd;
@@ -440,15 +452,19 @@
     .slide1 {
       background-image: url('../assets/images/home/book-awakening.jpg');
     }
+
     .slide2 {
       background-image: url('../assets/images/home/book-prayer.jpg');
     }
+
     .slide3 {
       background-image: url('../assets/images/home/book-true-freedom.jpg');
     }
+
     .slide4 {
       background-image: url('../assets/images/home/book-true-happiness.jpg');
     }
+
     .slide5 {
       background-image: url('../assets/images/home/book-true-wisdom.jpg');
     }
@@ -470,16 +486,21 @@
       &:after {
         font-family: FontAwesome;
         font-size: $fsize5;
-        content: '\f16a';
         color: $youtube-color;
         margin-left: 5px;
         vertical-align: middle;
+        content: '\f16a';
       }
     }
   }
 
   @media screen and (min-width: 768px) {
-    #dharma-qa, #blog, #fb-widget, #articles, #books, #talks {
+    #dharma-qa,
+    #blog,
+    #fb-widget,
+    #articles,
+    #books,
+    #talks {
       width: 100%;
       margin: auto;
     }
@@ -495,6 +516,7 @@
       .spinner-wrapper {
         height: 500px;
       }
+
       .slide {
         height: 500px;
       }

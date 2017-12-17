@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueHead from 'vue-head'
 import Router from 'vue-router'
 import Home from '@/components/Home.vue'
 import About from '@/components/About.vue'
@@ -8,6 +9,7 @@ import Events from '@/components/Events.vue'
 import BlogMaster from '@/components/blog/Master.vue'
 import BlogDetail from '@/components/blog/Detail.vue'
 
+Vue.use(VueHead)
 Vue.use(Router)
 
 export default new Router({

@@ -34,6 +34,7 @@
     font-size: $fsize6;
     font-weight: bold;
     cursor: pointer;
+
     span {
       &:first-child {
         padding-top: 3px;

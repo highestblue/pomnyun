@@ -1,0 +1,178 @@
+@import './import';
+
+html {font-size: 16px;}
+
+body {
+  min-width: 320px;
+  max-width: 1920px;
+  background-color: $color2;
+  color: $color1;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.45;
+}
+
+main {
+  padding-bottom: 100px;
+  background-color: $white;
+  overflow: hidden;
+}
+
+p {
+  margin-bottom: 1.3rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1.414rem 0 0.5rem;
+  font-family: $accent-font;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: $fsize1;
+}
+
+h2 {
+  font-size: $fsize2;
+}
+
+h3 {
+  font-size: $fsize3;
+}
+
+h4 {
+  font-size: $fsize4;
+}
+
+h5 {
+  font-size: $fsize5;
+}
+
+h6 {
+  font-size: $fsize6;
+}
+
+small {
+  font-size: $fsize7;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: $color2;
+
+  &:hover,
+  &:focus {
+    color: $color4;
+    text-decoration: none;
+  }
+}
+
+hr {
+  border-style: dashed;
+  border-color: $color3;
+}
+
+.flex-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.cta1 {
+  display: inline-block;
+  height: 25px;
+  padding: 2px 8px;
+  background-color: $color4;
+  color: $base-white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  vertical-align: middle;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $base-white;
+    color: $color4;
+    text-decoration: none;
+  }
+}
+
+.custom-controls-stacked {
+  display: flex;
+  flex-direction: column;
+
+  .custom-control {
+    display: inline-flex;
+    position: relative;
+    min-height: 1.5rem;
+    margin-right: 1rem;
+    padding-left: 1.5rem;
+    cursor: pointer;
+
+    .custom-control-indicator {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: $base-white;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 50% 50%;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .custom-control-input {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+
+      &:checked ~ .custom-control-indicator {
+        background-color: $color4;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
+        color: $white;
+      }
+
+      &:focus ~ .custom-control-indicator {
+        box-shadow: 0 0 0 1px $white, 0 0 0 3px $color4;
+      }
+
+      &:active ~ .custom-control-indicator {
+        background-color: $color4;
+        color: $white;
+      }
+
+      &:disabled ~ .custom-control-indicator {
+        background-color: $color5;
+        cursor: not-allowed;
+      }
+
+      &:disabled ~ .custom-control-description {
+        color: $color5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

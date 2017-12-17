@@ -69,6 +69,13 @@
         last14days: moment().subtract(14, 'days').unix()
       }
     },
+    head: {
+      title () {
+        return {
+          inner: 'Dharma Q&A'
+        }
+      }
+    },
     firebase: {
       dharmaArr: db.ref('dharma')
     },
@@ -130,14 +137,17 @@
 
   input {
     height: inherit;
+
     &::-webkit-input-placeholder {
       color: $color3;
       letter-spacing: 1px;
     }
+
     &::-moz-placeholder {
       color: $color3;
       letter-spacing: 1px;
     }
+
     &:-ma-input-placeholder {
       color: $color3;
       letter-spacing: 1px;
@@ -173,18 +183,23 @@
           text-transform: uppercase;
           letter-spacing: 1px;
         }
+
         .accordion-menu {
           border: 1px solid $color4;
           text-align: center;
+
           li {
             color: $color3;
             font-size: 1rem;
             text-transform: capitalize;
             cursor: pointer;
+
             &:not(:last-child) {
               margin-bottom: 5px;
             }
-            &:hover, &:focus {
+
+            &:hover,
+            &:focus {
               color: $color1;
             }
           }
@@ -195,6 +210,7 @@
 
   #search-bar {
     margin-bottom: 30px;
+
     .input-group {
       height: 40px;
       position: relative;
@@ -205,6 +221,7 @@
 
       .input-group-btn {
         height: inherit;
+
         button {
           @extend .flex-default;
           justify-content: space-between;
@@ -223,6 +240,7 @@
               font-weight: bold;
               text-transform: capitalize;
             }
+
             &:last-child {
               padding-top: 3px;
             }
@@ -238,15 +256,19 @@
           background-color: $base-white;
           border: 1px solid $color4;
           border-radius: 0.25rem;
+
           li {
             color: $color3;
             font-size: 1rem;
             text-transform: capitalize;
             cursor: pointer;
+
             &:not(:last-child) {
               margin-bottom: 5px;
             }
-            &:hover, &:focus {
+
+            &:hover,
+            &:focus {
               color: $color1;
             }
           }
@@ -261,12 +283,14 @@
       position: relative;
       padding: 5px 15px;
       border: 1px solid $color3;
-      cursor: pointer;
       margin-bottom: 15px;
+      cursor: pointer;
+
       p {
         margin: 0;
         text-align: center;
       }
+
       span {
         position: absolute;
         top: 5px;
@@ -279,6 +303,7 @@
         text-align: center;
       }
     }
+
     .new {
       background-color: $color4;
     }
