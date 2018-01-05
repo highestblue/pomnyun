@@ -64,6 +64,30 @@
                 </a>
               </swiper-slide>
               <swiper-slide>
+                <a href="http://koreajoongangdaily.joins.com/news/article/article.aspx?aid=3042312" target="_blank" class="slide">
+                  <div>
+                    <div class="title">Don’t count on China</div>
+                    <div class="publisher">Korea JoongAng Daily</div>
+                  </div>
+                </a>
+              </swiper-slide>
+              <swiper-slide>
+                <a href="http://koreajoongangdaily.joins.com/news/article/article.aspx?aid=3042562" target="_blank" class="slide">
+                  <div>
+                    <div class="title">Treating Kim like a king</div>
+                    <div class="publisher">Korea JoongAng Daily</div>
+                  </div>
+                </a>
+              </swiper-slide>
+              <swiper-slide>
+                <a href="http://koreajoongangdaily.joins.com/news/article/article.aspx?aid=3042821" target="_blank" class="slide">
+                  <div>
+                    <div class="title">The art of good enough</div>
+                    <div class="publisher">Korea JoongAng Daily</div>
+                  </div>
+                </a>
+              </swiper-slide>
+              <swiper-slide>
                 <a href="http://www.huffingtonpost.com/author/annahjin88-809" target="_blank" class="slide">
                   <div>
                     <div class="title">the blog</div>
