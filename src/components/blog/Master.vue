@@ -40,13 +40,14 @@
 
       <section id="blog-cards" class="col-xs-12 col-md-9">
         <transition-group name="animatecss" mode="out-in" enter-active-class="animated zoomIn" tag="div">
-        <div class="card hvr-overline-reveal" v-for="record in sortedRecords" :key="record['.key']" @click="seeDetail(record)"
-        :style="{ 'background-image': 'url(' + record.thumbnail + ')'}">
-          <div class="card-block ">
-            <p class="card-title">{{ limitChars(record.title[lang], 40) }}</p>
-            <i class="date">{{ record.date | date }}</i>
+          <div class="card" v-for="record in sortedRecords" :key="record['.key']" @click="seeDetail(record)">
+            <span class="card-tag" v-if="record.created > last14days">NEW</span>
+            <div class="card-bg" :style="{ 'background-image': 'url(' + record.thumbnail + ')'}"></div>
+            <div class="card-block ">
+              <p class="card-title">{{ limitChars(record.title[lang], 40) }}</p>
+              <i class="date">{{ record.date | date }}</i>
+            </div>
           </div>
-        </div>
         </transition-group>
       </section>
     </div>
@@ -69,7 +70,8 @@
         categories: categoryObj.blog,
         keyword: '',
         selectedCategory: 'all',
-        filteredRecords: []
+        filteredRecords: [],
+        last14days: moment().subtract(14, 'days').unix()
       }
     },
     head: {
@@ -281,17 +283,52 @@
       width: 100%;
       height: 300px;
       display: block;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 15px;
       position: relative;
+      overflow: hidden;
       cursor: pointer;
 
-      &.hvr-overline-reveal:before {
-        background: $color4;
+      &:active,
+      &:focus,
+      &:hover {
+        .card-bg {
+          transform: scale(1.2);
+        }
+
+        .card-block {
+          .card-title,
+          .date {
+            color: $color4;
+          }
+        }
+      }
+
+      .card-tag {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        padding: 3px 5px;
+        z-index: 2;
+        // background-color: rgba($base-black, 0.8);
+        background-color: rgba($color4, 0.8);
+        border-radius: 3px;
+        color: $base-black;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      .card-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: all 0.2s;
       }
 
       .card-block {
@@ -301,11 +338,16 @@
         bottom: 0;
         width: 100%;
         height: 55px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background-color: rgba($base-black, 0.8);
         padding: 5px 10px;
 
-        .card-title, .date {
+        .card-title,
+        .date {
           color: $base-white;
+          transition: all 0.2s;
         }
 
         .card-title {
