@@ -38,7 +38,7 @@
 
             <div class="col-xs-12 visible-xs visible-sm">
               <app-logo></app-logo>
-              <small>© 2017 Jungto Society {{ $t('common.copyright') }}<br><a href="mailto:info@pomnyun.com">info@pomnyun.com</a></small>
+              <small>© 2018 Jungto Society {{ $t('common.copyright') }}<br><a href="mailto:info@pomnyun.com">info@pomnyun.com</a></small>
             </div>
 
           </div>
