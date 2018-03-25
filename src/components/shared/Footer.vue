@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-4 hidden-xs hidden-sm">
           <app-logo></app-logo>
-          <small>© 2017 Jungto Society {{ $t('common.copyright') }}<br><a href="mailto:info@pomnyun.com">info@pomnyun.com</a></small>
+          <small>© 2018 Jungto Society {{ $t('common.copyright') }}<br><a href="mailto:info@pomnyun.com">info@pomnyun.com</a></small>
         </div>
 
         <div class="col-xs-12 col-md-8">
