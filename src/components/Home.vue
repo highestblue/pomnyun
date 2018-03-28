@@ -286,7 +286,7 @@
     firebase: {
       dharmaArr: db.ref('dharma').limitToLast(9),
       blogArr: db.ref('blog').limitToLast(1),
-      slideArr: db.ref('slide')
+      slideArr: db.ref('slide').orderByChild('order')
     },
     mounted () {
       this.loadYoutubeVideos()
