@@ -11,7 +11,7 @@
         <div class="col-xs-12 col-md-8">
           <div class="content">
             <div class="title">{{ record.title[lang] }}</div>
-            <div class="date">{{ formatTime(record.startDate, record.endDate) }} <small>{{ record.timezone }}</small></div>
+            <div class="date">{{ record.startDate }} - {{ record.endDate }} <small>{{ record.timezone }}</small></div>
             <div class="venue">{{ record.venue }} <a :href="record.address | googleMap" target="_blank"><i class="fa fa-map-marker"></i> {{ $t('events.findOnMap') }}</a></div>
             <div class="description" v-html="record.content[lang]"></div>
             <a v-if="record.link" :href="record.link" target="_blank" class="cta1">RSVP</a>
@@ -32,7 +32,7 @@
         <div class="col-xs-12 col-md-8">
           <div class="content">
             <div class="title">{{ record.title[lang] }}</div>
-            <div class="date">{{ formatTime(record.startDate, record.endDate) }} <small>{{ record.timezone }}</small></div>
+            <div class="date">{{ record.startDate }} - {{ record.endDate }} <small>{{ record.timezone }}</small></div>
             <div class="venue">{{ record.venue }} <a :href="record.address | googleMap" target="_blank"><i class="fa fa-map-marker"></i> {{ $t('events.findOnMap') }}</a></div>
             <div class="description" v-html="record.content[lang]"></div>
           </div>
