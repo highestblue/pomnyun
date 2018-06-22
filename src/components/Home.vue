@@ -56,6 +56,14 @@
             <h6>{{ $t('common.articles') }}</h6>
             <swiper :options="swiperOption2">
               <swiper-slide>
+                <a href="http://m.koreatimes.co.kr/pages/article.asp?newsIdx=251042" target="_blank" class="slide">
+                  <div>
+                    <div class="title">Zen master spreads Buddhism at home as foreign population grows fast</div>
+                    <div class="publisher">Korea Times</div>
+                  </div>
+                </a>
+              </swiper-slide>
+              <swiper-slide>
                 <a href="http://koreajoongangdaily.joins.com/news/article/article.aspx?aid=3042020" target="_blank" class="slide">
                   <div>
                     <div class="title">‘America First’ and North Korea</div>
