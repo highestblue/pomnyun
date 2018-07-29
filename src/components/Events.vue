@@ -73,7 +73,7 @@
           }
         })
 
-        return data
+        return _.sortBy(data, 'created').reverse()
       },
       pastEvents () {
         let vm = this
