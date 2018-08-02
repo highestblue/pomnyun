@@ -56,6 +56,14 @@
             <h6>{{ $t('common.articles') }}</h6>
             <swiper :options="swiperOption2">
               <swiper-slide>
+                <a href="https://www.buddhistdoor.net/features/engaging-with-suffering-realizing-freedom-an-interview-with-ven-pomnyun-sunim" target="_blank" class="slide">
+                  <div>
+                    <div class="title">Engaging with Suffering, Realizing Freedom: An Interview with Ven. Pomnyun Sunim</div>
+                    <div class="publisher">Buddhistdoor</div>
+                  </div>
+                </a>
+              </swiper-slide>
+              <swiper-slide>
                 <a href="http://m.koreatimes.co.kr/pages/article.asp?newsIdx=251042" target="_blank" class="slide">
                   <div>
                     <div class="title">Zen master spreads Buddhism at home as foreign population grows fast</div>
