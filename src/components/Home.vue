@@ -56,6 +56,14 @@
             <h6>{{ $t('common.articles') }}</h6>
             <swiper :options="swiperOption2">
               <swiper-slide>
+                <a href="https://www.buddhistdoor.net/news/buddhist-humanitarian-organization-jts-offers-relief-for-typhoon-mangkhut-victims-in-the-philippines" target="_blank" class="slide">
+                  <div>
+                    <div class="title">Buddhist Humanitarian Organization JTS Offers Relief for Typhoon Mangkhut Victims in the Philippines</div>
+                    <div class="publisher">Buddhistdoor</div>
+                  </div>
+                </a>
+              </swiper-slide>
+              <swiper-slide>
                 <a href="https://www.buddhistdoor.net/features/engaging-with-suffering-realizing-freedom-an-interview-with-ven-pomnyun-sunim" target="_blank" class="slide">
                   <div>
                     <div class="title">Engaging with Suffering, Realizing Freedom: An Interview with Ven. Pomnyun Sunim</div>
