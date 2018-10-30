@@ -4,7 +4,15 @@
       <div class="row">
         <div class="col-md-4 hidden-xs hidden-sm">
           <app-logo></app-logo>
-          <small>© 2018 Jungto Society {{ $t('common.copyright') }}<br><a href="mailto:info@pomnyun.com">info@pomnyun.com</a></small>
+          <div class="footer__address">
+            <p><strong>Jungto Society USA</strong></p>
+            <p>4362 Aitcheson Rd.</p>
+            <p>Beltsville, MD 20795</p>
+            <a href="mailto:international@jungto.org">international@jungto.org</a>
+          </div>
+          <div class="footer__copyright">
+            <small>© 2018 Jungto Society {{ $t('common.copyright') }}.</small>
+          </div>
         </div>
 
         <div class="col-xs-12 col-md-8">
@@ -38,7 +46,15 @@
 
             <div class="col-xs-12 visible-xs visible-sm">
               <app-logo></app-logo>
-              <small>© 2018 Jungto Society {{ $t('common.copyright') }}<br><a href="mailto:info@pomnyun.com">info@pomnyun.com</a></small>
+              <div class="footer__address">
+                <p><strong>Jungto Society USA</strong></p>
+                <p>4362 Aitcheson Rd.</p>
+                <p>Beltsville, MD 20795</p>
+                <a href="mailto:international@jungto.org">international@jungto.org</a>
+              </div>
+              <div class="footer__copyright">
+                <small>© 2018 Jungto Society {{ $t('common.copyright') }}.</small>
+              </div>
             </div>
 
           </div>
@@ -142,6 +158,21 @@
         }
       }
     }
+  }
+
+  .footer__address {
+    margin-top: 1rem;
+    color: $base-white;
+    font-size: 0.75rem;
+
+    p {
+      margin-bottom: 0;
+      line-height: 1rem;
+    }
+  }
+
+  .footer__copyright {
+    color: $base-white;
   }
 
   @media screen and (min-width: 992px) {
