@@ -56,6 +56,14 @@
             <h6>{{ $t('common.articles') }}</h6>
             <swiper :options="swiperOption2">
               <swiper-slide>
+                <a href="http://goodfriendsusa.blogspot.com/2018/11/peacebuilding-on-korean-peninsula-what.html" target="_blank" class="slide">
+                  <div>
+                    <div class="title">Peacebuilding on the Korean Peninsula: What Should Be Done and What Can Be Done</div>
+                    <div class="publisher">GoodFriends USA</div>
+                  </div>
+                </a>
+              </swiper-slide>
+              <swiper-slide>
                 <a href="https://www.buddhistdoor.net/news/buddhist-humanitarian-organization-jts-offers-relief-for-typhoon-mangkhut-victims-in-the-philippines" target="_blank" class="slide">
                   <div>
                     <div class="title">Buddhist Humanitarian Organization JTS Offers Relief for Typhoon Mangkhut Victims in the Philippines</div>
