@@ -204,6 +204,15 @@
             <swiper :options="swiperOption4">
               <swiper-slide>
                 <div class="video-wrapper">
+                  <div class="yt-player">
+                    <div class="title">
+                      Talk at Justice Assembly at 2018 Parliament of the World’s Religions
+                    </div>
+                  </div>
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div class="video-wrapper">
                   <div class="yt-player"></div>
                   <div class="title">Talk At Google</div>
                 </div>
@@ -240,7 +249,7 @@
     },
     data () {
       return {
-        videoIDArr: ['_ZSHNAiQomc', 'R-eynN3Yyk0', 'i3YcqRuW6X0'],
+        videoIDArr: ['yAP5bRUQjhY', '_ZSHNAiQomc', 'R-eynN3Yyk0', 'i3YcqRuW6X0'],
         lang: 'en',
         swiperOption1: {
           slidesPerView: 1,
