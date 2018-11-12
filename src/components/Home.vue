@@ -5,7 +5,7 @@
         <div class="spinner-wrapper" v-if="slides.length === 0">
           <fade-loader :loading="spinnerLoading" :color="spinnerColor" :height="spinnerHeight" :width="spinnerWidth"></fade-loader>
         </div>
-        <swiper :options="swiperOption1">
+        <swiper :options="slideSwiperOptions">
           <swiper-slide v-for="slide in slides" :key="slide['.key']">
             <div class="slide" :style="{ 'background-image': 'url(' + slide.imageURL + ')'}">
               <a :href="slide.targetURL" :target="slide.targetWindow" v-if="slide.targetURL !== ''">{{ slide.buttonText }}</a>
@@ -17,9 +17,9 @@
       </div>
     </section>
 
-    <section class="row">
-      <div class="container">
-        <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-lg-4">
           <div id="dharma-qa">
             <router-link to="/dharma" tag="h6">dharma q&a <i class="fa fa-arrow-right"></i></router-link>
             <ul>
@@ -31,7 +31,7 @@
           </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="col-xs-12 col-sm-6 col-lg-4">
           <div id="blog">
             <router-link to="/blog" tag="h6">{{ $t('common.blog') }} <i class="fa fa-arrow-right"></i></router-link>
 
@@ -44,17 +44,39 @@
           </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="col-xs-12 col-lg-4">
           <div id="fb-widget">
             <h6>{{ $t('common.connect') }}</h6>
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpomnyundailyquote%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=963163000486714" width="340" height="275" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
           </div>
         </div>
+      </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="books">
+            <h6>{{ $t('common.books') }}</h6>
+            <swiper :options="bookSwiperOptions">
+              <swiper-slide>
+                <a href="https://play.google.com/store/books/details/%EB%B2%95%EB%A5%9C%EC%8A%A4%EB%8B%98_Ven_Pomnyun_Sunim_Awakening?id=eIaYCgAAQBAJ&hl=en" target="_blank" class="slide slide1"></a>
+              </swiper-slide>
+              <swiper-slide>
+                <a href="https://play.google.com/store/books/details/%EB%B2%95%EB%A5%9C%EC%8A%A4%EB%8B%98_Ven_Pomnyun_Sunim_Prayer_Letting_Go?id=j--HCgAAQBAJ&hl=en" target="_blank" class="slide slide2"></a>
+              </swiper-slide>
+              <swiper-slide><div class="slide slide3"></div></swiper-slide>
+              <swiper-slide><div class="slide slide4"></div></swiper-slide>
+              <swiper-slide><div class="slide slide5"></div></swiper-slide>
+              <div class="book-swiper-pagination" slot="pagination"></div>
+            </swiper>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
           <div id="articles">
             <h6>{{ $t('common.articles') }}</h6>
-            <swiper :options="swiperOption2">
+            <swiper :options="articleSwiperOptions">
               <swiper-slide>
                 <a href="http://goodfriendsusa.blogspot.com/2018/11/peacebuilding-on-korean-peninsula-what.html" target="_blank" class="slide">
                   <div>
@@ -175,33 +197,17 @@
                   </div>
                 </a>
               </swiper-slide>
-              <div class="swiper-pagination1" slot="pagination"></div>
+              <div class="article-swiper-pagination" slot="pagination"></div>
             </swiper>
           </div>
         </div>
+      </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div id="books">
-            <h6>{{ $t('common.books') }}</h6>
-            <swiper :options="swiperOption3">
-              <swiper-slide>
-                <a href="https://play.google.com/store/books/details/%EB%B2%95%EB%A5%9C%EC%8A%A4%EB%8B%98_Ven_Pomnyun_Sunim_Awakening?id=eIaYCgAAQBAJ&hl=en" target="_blank" class="slide slide1"></a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="https://play.google.com/store/books/details/%EB%B2%95%EB%A5%9C%EC%8A%A4%EB%8B%98_Ven_Pomnyun_Sunim_Prayer_Letting_Go?id=j--HCgAAQBAJ&hl=en" target="_blank" class="slide slide2"></a>
-              </swiper-slide>
-              <swiper-slide><div class="slide slide3"></div></swiper-slide>
-              <swiper-slide><div class="slide slide4"></div></swiper-slide>
-              <swiper-slide><div class="slide slide5"></div></swiper-slide>
-              <div class="swiper-pagination2" slot="pagination"></div>
-            </swiper>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="row">
+        <div class="col-xs-12">
           <div id="talks">
             <a href="https://www.youtube.com/channel/UCzfKXReow3r5n1JR5nVlJZw" target="_blank"><h6>{{ $t('common.talks') }} <i class="fa fa-arrow-right"></i></h6></a>
-            <swiper :options="swiperOption4">
+            <swiper :options="talkSwiperOptions">
               <swiper-slide>
                 <div class="video-wrapper">
                   <div class="yt-player">
@@ -229,12 +235,12 @@
                   <div class="title">Talk at Princenton University</div>
                 </div>
               </swiper-slide>
-              <div class="swiper-pagination3" slot="pagination"></div>
+              <div class="talk-swiper-pagination" slot="pagination"></div>
             </swiper>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
@@ -251,30 +257,56 @@
       return {
         videoIDArr: ['yAP5bRUQjhY', '_ZSHNAiQomc', 'R-eynN3Yyk0', 'i3YcqRuW6X0'],
         lang: 'en',
-        swiperOption1: {
+        slideSwiperOptions: {
           slidesPerView: 1,
           spaceBetween: 20,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev'
         },
-        swiperOption2: {
-          slidesPerView: 1,
+        articleSwiperOptions: {
+          slidesPerView: 3,
           spaceBetween: 20,
-          pagination: '.swiper-pagination1',
+          grabCursor: true,
+          pagination: '.article-swiper-pagination',
           paginationClickable: true,
-          autoHeight: true
+          breakpoints: {
+            480: {
+              slidesPerView: 1
+            },
+            980: {
+              slidesPerView: 2
+            }
+          }
         },
-        swiperOption3: {
-          slidesPerView: 1,
+        bookSwiperOptions: {
+          slidesPerView: 3,
           spaceBetween: 20,
-          pagination: '.swiper-pagination2',
-          paginationClickable: true
+          grabCursor: true,
+          pagination: '.book-swiper-pagination',
+          paginationClickable: true,
+          breakpoints: {
+            480: {
+              slidesPerView: 1
+            },
+            980: {
+              slidesPerView: 2
+            }
+          }
         },
-        swiperOption4: {
-          slidesPerView: 1,
+        talkSwiperOptions: {
+          slidesPerView: 3,
           spaceBetween: 20,
-          pagination: '.swiper-pagination3',
-          paginationClickable: true
+          grabCursor: true,
+          pagination: '.talk-swiper-pagination',
+          paginationClickable: true,
+          breakpoints: {
+            480: {
+              slidesPerView: 1
+            },
+            980: {
+              slidesPerView: 2
+            }
+          }
         },
         slides: [],
         last14days: moment().subtract(14, 'days').unix(),
