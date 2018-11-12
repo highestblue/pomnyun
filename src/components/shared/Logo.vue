@@ -79,7 +79,7 @@
   }
 
   svg {
-    fill: $base-white;
+    fill: $color4;
     transition: all 0.3s;
 
     &:hover,

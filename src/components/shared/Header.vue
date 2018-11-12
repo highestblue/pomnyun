@@ -162,7 +162,7 @@
   }
 
   #service-nav {
-    background-color: $color4;
+    background-color: $white;
     padding: 0;
 
     .row {
@@ -197,7 +197,7 @@
           margin-right: 15px;
 
           a {
-            color: $base-white;
+            color: $base-black;
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
