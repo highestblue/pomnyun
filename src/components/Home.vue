@@ -25,7 +25,7 @@
             <ul>
               <li v-for="record in sortedDharmaArr" :key="record.id">
                 <a @click="seeDharmaDetail(record)">{{ record.title[lang] }}</a>
-                <span class="tag" v-if="record.created > last14days">New</span>
+                <span class="tag" v-if="record.created > last7days">New</span>
               </li>
             </ul>
           </div>
@@ -77,123 +77,11 @@
           <div id="articles">
             <h6>{{ $t('common.articles') }}</h6>
             <swiper :options="articleSwiperOptions">
-              <swiper-slide>
-                <a href="http://goodfriendsusa.blogspot.com/2018/11/peacebuilding-on-korean-peninsula-what.html" target="_blank" class="slide">
+              <swiper-slide v-for="record in articleArr" :key="record.id">
+                <a :href="record.targetURL" target="_blank" class="slide">
                   <div>
-                    <div class="title">Peacebuilding on the Korean Peninsula: What Should Be Done and What Can Be Done</div>
-                    <div class="publisher">GoodFriends USA</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="https://www.buddhistdoor.net/news/buddhist-humanitarian-organization-jts-offers-relief-for-typhoon-mangkhut-victims-in-the-philippines" target="_blank" class="slide">
-                  <div>
-                    <div class="title">Buddhist Humanitarian Organization JTS Offers Relief for Typhoon Mangkhut Victims in the Philippines</div>
-                    <div class="publisher">Buddhistdoor</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="https://www.buddhistdoor.net/features/engaging-with-suffering-realizing-freedom-an-interview-with-ven-pomnyun-sunim" target="_blank" class="slide">
-                  <div>
-                    <div class="title">Engaging with Suffering, Realizing Freedom: An Interview with Ven. Pomnyun Sunim</div>
-                    <div class="publisher">Buddhistdoor</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="http://m.koreatimes.co.kr/pages/article.asp?newsIdx=251042" target="_blank" class="slide">
-                  <div>
-                    <div class="title">Zen master spreads Buddhism at home as foreign population grows fast</div>
-                    <div class="publisher">Korea Times</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="http://koreajoongangdaily.joins.com/news/article/article.aspx?aid=3042020" target="_blank" class="slide">
-                  <div>
-                    <div class="title">‘America First’ and North Korea</div>
-                    <div class="publisher">Korea JoongAng Daily</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="http://koreajoongangdaily.joins.com/news/article/article.aspx?aid=3042312" target="_blank" class="slide">
-                  <div>
-                    <div class="title">Don’t count on China</div>
-                    <div class="publisher">Korea JoongAng Daily</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="http://koreajoongangdaily.joins.com/news/article/article.aspx?aid=3042562" target="_blank" class="slide">
-                  <div>
-                    <div class="title">Treating Kim like a king</div>
-                    <div class="publisher">Korea JoongAng Daily</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="http://koreajoongangdaily.joins.com/news/article/article.aspx?aid=3042821" target="_blank" class="slide">
-                  <div>
-                    <div class="title">The art of good enough</div>
-                    <div class="publisher">Korea JoongAng Daily</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="http://www.huffingtonpost.com/author/annahjin88-809" target="_blank" class="slide">
-                  <div>
-                    <div class="title">the blog</div>
-                    <div class="publisher">Huffington Post</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="http://www.huffingtonpost.com/2014/10/06/korean-buddhist-monk-ponm_n_5929484.html" target="_blank" class="slide">
-                  <div>
-                    <div class="title">A Buddhist Monk’s Advice On Overcoming Tech Addiction</div>
-                    <div class="publisher">Huffington Post</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="http://www.huffingtonpost.com/2014/10/06/this-buddhist-monk-has-devoted-_n_5939182.html" target="_blank" class="slide">
-                  <div>
-                    <div class="title">This Buddhist Monk Has Devoted His Life To Ending Suffering In North Korea</div>
-                    <div class="publisher">Huffington Post</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="https://www.lionsroar.com/buddhist-monk-activist-ven-pomnyun-co-hosts-event-to-launch-huffington-post-korea/" target="_blank" class="slide">
-                  <div>
-                    <div class="title">Buddhist monk, activist Ven. Pomnyun co-hosts event to launch Huffington Post Korea</div>
-                    <div class="publisher">Lion's Roar</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="http://www.nytimes.com/2012/04/28/world/asia/venerable-pomnyuns-earthly-mission-is-to-aid-north-korea.html" target="_blank" class="slide">
-                  <div>
-                    <div class="title">A Monk’s Earthly Mission: Easing North Koreans’ Pain</div>
-                    <div class="publisher">The New York Times</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="http://www.publicdiplomacymagazine.com/the-human-rights-situation-in-north-korea-and-humanitarian-aid-2/" target="_blank" class="slide">
-                  <div>
-                    <div class="title">The Human Rights Situation in North Korea and Humanitarian Aid</div>
-                    <div class="publisher">Public Diplomacy Magazine</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <swiper-slide>
-                <a href="http://www.dukechronicle.com/article/2013/09/buddhist-monk-and-activist-pomnyun-shares-advice-opinions-north-korea" target="_blank" class="slide">
-                  <div>
-                    <div class="title">Buddhist monk and activist Pomnyun shares advice, opinions on North Korea</div>
-                    <div class="publisher">The Chronicle</div>
+                    <div class="title">{{ record.title }}</div>
+                    <div class="publisher">{{ record.publisher }}</div>
                   </div>
                 </a>
               </swiper-slide>
@@ -207,33 +95,9 @@
         <div class="col-xs-12">
           <div id="talks">
             <a href="https://www.youtube.com/channel/UCzfKXReow3r5n1JR5nVlJZw" target="_blank"><h6>{{ $t('common.talks') }} <i class="fa fa-arrow-right"></i></h6></a>
-            <swiper :options="talkSwiperOptions">
-              <swiper-slide>
-                <div class="video-wrapper">
-                  <div class="yt-player">
-                    <div class="title">
-                      Talk at Justice Assembly at 2018 Parliament of the World’s Religions
-                    </div>
-                  </div>
-                </div>
-              </swiper-slide>
-              <swiper-slide>
-                <div class="video-wrapper">
-                  <div class="yt-player"></div>
-                  <div class="title">Talk At Google</div>
-                </div>
-              </swiper-slide>
-              <swiper-slide>
-                <div class="video-wrapper">
-                  <div class="yt-player"></div>
-                  <div class="title">Talk at Union Theological Seminary</div>
-                </div>
-              </swiper-slide>
-              <swiper-slide>
-                <div class="video-wrapper">
-                  <div class="yt-player"></div>
-                  <div class="title">Talk at Princenton University</div>
-                </div>
+            <swiper :options="talkSwiperOptions" ref="talkSwiper">
+              <swiper-slide v-for="record in videoSlides" :key="record.key">
+                <div v-html="record" @click="loadIframe"></div>
               </swiper-slide>
               <div class="talk-swiper-pagination" slot="pagination"></div>
             </swiper>
@@ -255,7 +119,6 @@
     },
     data () {
       return {
-        videoIDArr: ['yAP5bRUQjhY', '_ZSHNAiQomc', 'R-eynN3Yyk0', 'i3YcqRuW6X0'],
         lang: 'en',
         slideSwiperOptions: {
           slidesPerView: 1,
@@ -309,7 +172,7 @@
           }
         },
         slides: [],
-        last14days: moment().subtract(14, 'days').unix(),
+        last7days: moment().subtract(7, 'days').unix(),
         spinnerColor: '#E5B560',
         spinnerHeight: '10px',
         spinnerWidth: '10px',
@@ -324,6 +187,31 @@
     computed: {
       sortedDharmaArr () {
         return this.dharmaArr.reverse()
+      },
+      talkSwiper () {
+        return this.$refs.talkSwiper.swiper
+      },
+      videoSlides () {
+        let vm = this
+        let arr
+
+        if (this.videoArr.length > 1) {
+          arr = vm.videoArr.map((video) => {
+            return (
+              `<div class="swiper-slide">
+                <div class="video-wrapper">
+                  <div class="play-button"><i class="fa fa-youtube-play"></i></div>
+                  <div class="yt-player">
+                    <div class="title">${video.title}</div>
+                    <img src="https://i.ytimg.com/vi/${video.videoID}/hqdefault.jpg" class="yt-image" data-id="${video.videoID}" />
+                  </div>
+                </div>
+              </div>`
+            )
+          })
+        }
+
+        return arr
       }
     },
     methods: {
@@ -333,36 +221,28 @@
       seeBlogDetail (record) {
         this.$router.push({ name: 'blogDetail', params: { key: record['.key'], record: record } })
       },
-      loadYoutubeVideos () {
-        let img = null
-        let embed = 'https://i.ytimg.com/vi/ID/hqdefault.jpg'
-        let video = document.getElementsByClassName('yt-player')
-        for (var i = 0; i < video.length; i++) {
-          img = document.createElement('img')
-          img.setAttribute('src', embed.replace('ID', this.videoIDArr[i]))
-          img.setAttribute('class', 'yt-image')
-          img.setAttribute('data-id', this.videoIDArr[i])
-          img.onclick = this.loadIframe
-          video[i].appendChild(img)
-        }
-      },
       loadIframe () {
+        const parent = event.target.closest('.video-wrapper')
+        const ytPlayer = parent.querySelector('.yt-player')
         let iframe = document.createElement('iframe')
         let embed = 'https://www.youtube.com/embed/ID?autoplay=1'
-        iframe.setAttribute('src', embed.replace('ID', event.target.dataset.id))
+        let img = ytPlayer.querySelector('img')
+
+        iframe.setAttribute('src', embed.replace('ID', img.dataset.id))
         iframe.setAttribute('class', 'yt-iframe')
         iframe.setAttribute('frameborder', '0')
         iframe.setAttribute('allowfullscreen', '1')
-        event.target.parentNode.replaceChild(iframe, event.target)
+        ytPlayer.replaceChild(iframe, img)
       }
     },
     firebase: {
       dharmaArr: db.ref('dharma').limitToLast(9),
       blogArr: db.ref('blog').limitToLast(1),
-      slideArr: db.ref('slide').orderByChild('order')
+      slideArr: db.ref('slide').orderByChild('order'),
+      articleArr: db.ref('article').orderByChild('order'),
+      videoArr: db.ref('video').orderByChild('order')
     },
     mounted () {
-      this.loadYoutubeVideos()
       this.slides = this.slideArr
     }
   }
@@ -564,30 +444,6 @@
 
     .slide5 {
       background-image: url('../assets/images/home/book-true-wisdom.jpg');
-    }
-  }
-
-  #talks {
-    .title {
-      background-color: #000;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      color: $base-white;
-      text-align: center;
-      text-transform: capitalize;
-      letter-spacing: 1px;
-      padding: 5px;
-
-      &:after {
-        font-family: FontAwesome;
-        font-size: $fsize5;
-        color: $youtube-color;
-        margin-left: 5px;
-        vertical-align: middle;
-        content: '\f16a';
-      }
     }
   }
 

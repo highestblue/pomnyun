@@ -172,6 +172,38 @@
     }
   }
 
+  #talks {
+    .video-wrapper {
+      height: 275px;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: $youtube-color;
+    }
+
+    .title {
+      background-color: #000;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      color: $base-white;
+      text-align: center;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      padding: 5px;
+    }
+  }
+
   .yt-iframe {
     position: absolute;
     top: 0;
