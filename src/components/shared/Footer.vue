@@ -7,8 +7,7 @@
           <div class="footer__address">
             <p><strong>Jungto Society USA</strong></p>
             <p>4361 Aitcheson Rd.</p>
-            <p>Beltsville, MD 20705</p>
-            <p>USA</p>
+            <p>Beltsville, MD 20705, USA</p>
             <a href="mailto:international@jungto.org">international@jungto.org</a>
           </div>
           <div class="footer__copyright">
@@ -50,8 +49,7 @@
               <div class="footer__address">
                 <p><strong>Jungto Society USA</strong></p>
                 <p>4361 Aitcheson Rd.</p>
-                <p>Beltsville, MD 20705</p>
-                <p>USA</p>
+                <p>Beltsville, MD 20705, USA</p>
                 <a href="mailto:international@jungto.org">international@jungto.org</a>
               </div>
               <div class="footer__copyright">
