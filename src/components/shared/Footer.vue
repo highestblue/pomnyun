@@ -1,5 +1,12 @@
 <template>
   <div id="footer-wrapper">
+    <div class="newsletter__wrapper">
+      <h5>SIGN UP FOR HOPE LETTER</h5>
+      <div class="container">
+        <iframe width="350" height="132" src="https://my.sendinblue.com/users/subscribe/js_id/2mbi5/id/1" frameborder="0" scrolling="auto" allowfullscreen></iframe>
+      </div>
+    </div>
+
     <div class="container">
       <div class="row">
         <div class="col-md-4 hidden-xs hidden-sm">
@@ -71,6 +78,16 @@
   export default {
     components: {
       'app-logo': Logo
+    },
+    data () {
+      return {
+        email: ''
+      }
+    },
+    methods: {
+      submitForm () {
+        console.log('foo')
+      }
     }
   }
 </script>
@@ -126,8 +143,23 @@
   #footer-wrapper {
     background-color: $color2;
     height: 400px;
-    padding-top: 30px;
     padding-bottom: 200px;
+  }
+
+  .newsletter__wrapper {
+    text-align: center;
+    margin: 0 auto 20px;
+    padding: 5px 0;
+    background-color: $color4;
+
+    h5 {
+      position: relative;
+      z-index: 2;
+    }
+
+    iframe {
+      margin: -40px auto 0;
+    }
   }
 
   #sitemap-links {
@@ -195,6 +227,10 @@
     #external-links,
     #social-media-links {
       margin: 0;
+    }
+
+    .newsletter__input {
+      width: 50%;
     }
   }
 </style>
