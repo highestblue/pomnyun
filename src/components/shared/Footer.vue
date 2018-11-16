@@ -1,7 +1,7 @@
 <template>
   <div id="footer-wrapper">
     <div class="newsletter__wrapper">
-      <h5>SIGN UP FOR HOPE LETTER</h5>
+      <h5>SIGN UP FOR OUR NEWSLETTER</h5>
       <div class="container">
         <iframe width="350" height="132" src="https://my.sendinblue.com/users/subscribe/js_id/2mbi5/id/1" frameborder="0" scrolling="auto" allowfullscreen></iframe>
       </div>
