@@ -220,6 +220,7 @@
           li {
             a {
               font-weight: bold;
+              font-size: $fsize4;
             }
 
             &:first-child {
