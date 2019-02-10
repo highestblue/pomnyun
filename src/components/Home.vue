@@ -53,7 +53,18 @@
       </div>
 
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-lg-4">
+          <div id="article">
+            <router-link to="/article" tag="h6">{{ $t('common.articles') }} <i class="fa fa-arrow-right"></i></router-link>
+
+            <a class="tb hvr-shadow" v-for="record in articleArr" :key="record.id" :href="record.targetURL" target="_blank">
+              <p class="title">{{ record.title }}</p>
+              <p class="publisher">{{ record.publisher }}</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-lg-8">
           <div id="books">
             <h6>{{ $t('common.books') }}</h6>
             <swiper :options="bookSwiperOptions">
@@ -67,25 +78,6 @@
               <swiper-slide><div class="slide slide4"></div></swiper-slide>
               <swiper-slide><div class="slide slide5"></div></swiper-slide>
               <div class="book-swiper-pagination" slot="pagination"></div>
-            </swiper>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12">
-          <div id="articles">
-            <h6>{{ $t('common.articles') }}</h6>
-            <swiper :options="articleSwiperOptions">
-              <swiper-slide v-for="record in articleArr" :key="record.id">
-                <a :href="record.targetURL" target="_blank" class="slide">
-                  <div>
-                    <div class="title">{{ record.title }}</div>
-                    <div class="publisher">{{ record.publisher }}</div>
-                  </div>
-                </a>
-              </swiper-slide>
-              <div class="article-swiper-pagination" slot="pagination"></div>
             </swiper>
           </div>
         </div>
@@ -125,21 +117,6 @@
           spaceBetween: 20,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev'
-        },
-        articleSwiperOptions: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-          grabCursor: true,
-          pagination: '.article-swiper-pagination',
-          paginationClickable: true,
-          breakpoints: {
-            480: {
-              slidesPerView: 1
-            },
-            980: {
-              slidesPerView: 2
-            }
-          }
         },
         bookSwiperOptions: {
           slidesPerView: 3,
@@ -238,8 +215,8 @@
     firebase: {
       dharmaArr: db.ref('dharma').limitToLast(9),
       blogArr: db.ref('blog').limitToLast(1),
+      articleArr: db.ref('article').limitToLast(1),
       slideArr: db.ref('slide').orderByChild('order'),
-      articleArr: db.ref('article').orderByChild('order'),
       videoArr: db.ref('video').orderByChild('order')
     },
     mounted () {
@@ -338,6 +315,42 @@
     }
   }
 
+  #article {
+    height: 275px;
+    margin-bottom: 15px;
+
+    .tb {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+      padding: 0 30px;
+      background-color: $base-black;
+      text-align: center;
+      transition: all 0.2s;
+
+      &:hover,
+      &:focus {
+        background-color: $color4;
+      }
+    }
+
+    .title {
+      font-size: $fsize6;
+      font-family: $accent-font;
+      font-weight: bold;
+      text-transform: capitalize;
+      color: $base-white;
+      letter-spacing: 1px;
+    }
+
+    .publisher {
+      color: #ddd;
+      margin-top: 15px;
+      text-transform: capitalize;
+    }
+  }
+
   #blog {
     .tb {
       display: flex;
@@ -385,7 +398,6 @@
     margin: 0 auto;
   }
 
-  #articles,
   #books,
   #talks {
     .swiper-slide {
@@ -399,29 +411,6 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-    }
-  }
-
-  #articles {
-    .slide {
-      background-color: $base-black;
-      text-align: center;
-
-      .title {
-        font-size: $fsize6;
-        font-family: $accent-font;
-        font-weight: bold;
-        text-transform: capitalize;
-        color: $base-white;
-        letter-spacing: 1px;
-      }
-
-      .publisher {
-        font-size: $fsize7;
-        color: #ddd;
-        margin-top: 15px;
-        text-transform: capitalize;
-      }
     }
   }
 
@@ -451,7 +440,6 @@
     #dharma-qa,
     #blog,
     #fb-widget,
-    #articles,
     #books,
     #talks {
       width: 100%;
@@ -473,6 +461,10 @@
       .slide {
         height: 500px;
       }
+    }
+
+    #article {
+      margin-bottom: 0;
     }
   }
 </style>

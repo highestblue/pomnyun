@@ -5,6 +5,7 @@
         <ul class="nav-links">
           <li @click="navigate('/about')">{{ $t('common.about') }}</li>
           <li @click="navigate('/dharma')">dharma q&a</li>
+          <li @click="navigate('/article')">{{ $t('common.articles') }}</li>
           <li @click="navigate('/events')">{{ $t('common.events') }}</li>
           <li @click="navigate('/blog')">{{ $t('common.blog') }}</li>
         </ul>
@@ -34,6 +35,7 @@
               <ul class="nav-links">
                 <router-link to="/about" activeClass="active" tag="li"><a>{{ $t('common.about') }}</a></router-link>
                 <router-link to="/dharma" activeClass="active" tag="li"><a>dharma q&a</a></router-link>
+                <router-link to="/article" activeClass="active" tag="li"><a>{{ $t('common.articles') }}</a></router-link>
                 <router-link to="/events" activeClass="active" tag="li"><a>{{ $t('common.events') }}</a></router-link>
                 <router-link to="/blog" activeClass="active" tag="li"><a>{{ $t('common.blog') }}</a></router-link>
               </ul>
@@ -177,7 +179,7 @@
     button {
       i {
         font-size: $fsize4;
-        color: $base-white;
+        color: $color4;
 
         &:hover,
         &:focus {
