@@ -241,24 +241,28 @@
     }
 
     .slide {
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+      position: relative;
       width: 100%;
       height: 200px;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       padding-bottom: 50px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
 
       a {
+        position: absolute;
+        top: 20px;
+        right: 30px;
         padding: 0 15px;
-        height: 60px;
+        min-width: 100px;
+        height: 45px;
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 3px solid $color4;
-        background-color: $base-white;
+        background-color: $color4;
         border-radius: 4px;
         font-weight: bold;
         font-size: $fsize5;
