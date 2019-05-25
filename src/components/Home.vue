@@ -7,7 +7,10 @@
         </div>
         <swiper :options="slideSwiperOptions">
           <swiper-slide v-for="slide in slides" :key="slide['.key']">
-            <div class="slide" :style="{ 'background-image': 'url(' + slide.imageURL + ')'}">
+            <div class="slide hidden-xs" :style="{ 'background-image': 'url(' + slide.imageURL + ')'}">
+              <a :href="slide.targetURL" :target="slide.targetWindow" v-if="slide.targetURL !== ''">{{ slide.buttonText }}</a>
+            </div>
+            <div class="slide visible-xs" :style="{ 'background-image': 'url(' + slide.mobileImageUrl + ')'}">
               <a :href="slide.targetURL" :target="slide.targetWindow" v-if="slide.targetURL !== ''">{{ slide.buttonText }}</a>
             </div>
           </swiper-slide>
@@ -243,7 +246,7 @@
     .slide {
       position: relative;
       width: 100%;
-      height: 200px;
+      height: 300px;
       display: flex;
       justify-content: center;
       align-items: flex-end;
