@@ -8,10 +8,10 @@
         <swiper :options="slideSwiperOptions">
           <swiper-slide v-for="slide in slides" :key="slide['.key']">
             <div class="slide hidden-xs" :style="{ 'background-image': 'url(' + slide.imageURL + ')'}">
-              <a :href="slide.targetURL" :target="slide.targetWindow" v-if="slide.targetURL !== ''">{{ slide.buttonText }}</a>
+              <a :href="slide.targetURL" :target="slide.targetWindow" v-if="slide.targetURL !== ''"></a>
             </div>
             <div class="slide visible-xs" :style="{ 'background-image': 'url(' + slide.mobileImageUrl + ')'}">
-              <a :href="slide.targetURL" :target="slide.targetWindow" v-if="slide.targetURL !== ''">{{ slide.buttonText }}</a>
+              <a :href="slide.targetURL" :target="slide.targetWindow" v-if="slide.targetURL !== ''"></a>
             </div>
           </swiper-slide>
           <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
@@ -257,24 +257,15 @@
 
       a {
         position: absolute;
-        top: 20px;
-        right: 30px;
-        padding: 0 15px;
-        min-width: 100px;
-        height: 45px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $color4;
-        border-radius: 4px;
-        font-weight: bold;
-        font-size: $fsize5;
-        text-transform: uppercase;
-        text-align: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
 
         &:hover,
         &:focus {
-          background-color: $base-black;
+          background-color: rgba(255, 255, 255, 0.2);
         }
       }
     }
